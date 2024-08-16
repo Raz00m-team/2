@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Two</title>
+    <style>
+        body {
+            background-image: url('https://i.ibb.co/qBRYz61/image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .download-link {
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .hint-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
+        <span>Каждый</span>
+        <input type="text" id="userInput">
+        <button onclick="checkAnswer()">Ответить</button>
+    </div>
+
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
+        <span class="download-link" onclick="downloadImage()">нъчц.png</span>
+    </div>
+
+    <div class="container hint-container" id="hint1Container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
+        <button onclick="showHint1()">Подсказка 1</button>
+    </div>
+
+    <div class="container hint-container" id="hint2Container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
+        <button onclick="showHint2()">Подсказка 2</button>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const input = document.getElementById('userInput').value.trim().toLowerCase();
+            if (input === 'думает') {
+                window.location.href = 'https://sapphire-adah-74.tiiny.site';
+            } else {
+                alert('Неправильный ответ. Попробуйте еще раз.');
+            }
+        }
+
+        function downloadImage() {
+            fetch('https://i.ibb.co/2knyP7W/image.png')
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'нъчц.png';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                })
+                .catch(console.error);
+        }
+
+        function showHint1() {
+            const hint1Container = document.getElementById('hint1Container');
+            hint1Container.innerHTML = 'Для расшифровки фото: https://m.youtube.com/watch?v=tw0gEAuqGbk';
+            }
+
+        function showHint2() {
+            const hint2Container = document.getElementById('hint2Container');
+            const img = document.createElement('img');
+            img.src = 'https://i.postimg.cc/J7S0VPRx/1000011330-1.png';
+            img.alt = 'Brightness Icon';
+            hint2Container.innerHTML = '';
+            hint2Container.appendChild(img);
+        }
+    </script>
+</body>
+</html>
