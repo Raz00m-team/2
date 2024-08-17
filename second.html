@@ -33,15 +33,11 @@
     </div>
 
     <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
-        <span class="download-link" onclick="downloadImage()">Нъчц.png</span>
-    </div>
-
-    <div class="container hint-container" id="hint1Container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
-        <button onclick="showHint1()">Подсказка 1</button>
+        <span class="download-link" onclick="downloadImage()">Волк.png</span>
     </div>
 
     <div class="container hint-container" id="hint2Container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
-        <button onclick="showHint2()">Подсказка 2</button>
+        <button onclick="showHint2()">Подсказка</button>
     </div>
 
     <script>
@@ -55,12 +51,12 @@
         }
 
         function downloadImage() {
-            fetch('https://sun9-5.userapi.com/s/v1/ig2/PE8EzzdZ07KxKpk9-WtAWH-KHwOcjWZ5NkBJbiemQSFtxRFd0L_13YESB_vbqud54UQGryhLRcho609guaVzt3fv.jpg?quality=96&as=32x61,48x91,72x136,108x204,160x303,240x454,360x682,480x909,540x1022,640x1212,676x1280&from=bu&cs=676x1280')
+            fetch('https://i.postimg.cc/mrs3QVKk/IMG-20240817-153558-214.jpg')
                 .then(response => response.blob())
                 .then(blob => {
                     const link = document.createElement('a');
                     link.href = URL.createObjectURL(blob);
-                    link.download = 'Нъчц.png';
+                    link.download = 'Волк.png';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
