@@ -33,7 +33,7 @@
     </div>
 
     <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
-        <span class="download-link" onclick="downloadImage()">нъчц.png</span>
+        <span class="download-link" onclick="downloadImage()">Нъчц.png</span>
     </div>
 
     <div class="container hint-container" id="hint1Container" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px; margin: 10px 0;">
@@ -55,12 +55,12 @@
         }
 
         function downloadImage() {
-            fetch('https://i.ibb.co/2knyP7W/image.png')
+            fetch('https://i.postimg.cc/RF35wkcN/IMG-20240817-144506-010.jpg')
                 .then(response => response.blob())
                 .then(blob => {
                     const link = document.createElement('a');
                     link.href = URL.createObjectURL(blob);
-                    link.download = 'нъчц.png';
+                    link.download = 'Нъчц.png';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
